@@ -106,12 +106,8 @@
 	<p style="color:red;font-weight:900">${errors.password }</p>
 	
 	
-	<p style="color:#333;font-size:16px;float:left;padding-top:19px;">密　码：</p>
-	<input class="in" type="checkbox" name="password" value="${form.password }"/><br/>
-	<p style="color:red;font-weight:900">${errors.password }</p>
 	
-	
-	<%-- <tr>
+	<tr>
 		<td>
 			<input type="checkbox" name="remname" value="true" 
 				${empty cookie.remname?"": "checked='checked'" } />
@@ -122,7 +118,7 @@
 				${empty cookie.autologin?"": "checked='checked'" } />
 				<span style="font-size:16px;font-family:'微软雅黑';color:#333;">30天内自动登陆</span>
 		</td>
-	</tr> --%>
+	</tr>
         <div class="bottom"> 
          <a id="js-mail_btn" href="javascript:;" class="button btn-green">
           <input type="submit" value="立即登录"/>
