@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.BackUserMapper">
+
+	<insert id="add">
+		INSERT INTO user (USER_ID,USERNAME,PASSWORD,create_time,state,money,NAME,card_no,tel,address,email) 
+		VALUES (#{userId},#{username},#{password},#{createTime},#{state},#{money},#{name},#{cardNo},#{tel},#{address},#{email})
+
+	</insert>
+	<select id="findOne" resultType="User">
+
+		SELECT * FROM USER WHERE user_id=#{userId}
+
+	</select>
+
+<update id="changeState">
+		UPDATE user SET state=#{state} WHERE user_id in
+		<!-- 因为传递过来的是map 所以collection中写key -->
+		<foreach collection="userId" item="IdE" open="(" close=")"
+			separator=",">
+			 #{IdE}
+		</foreach>
+
+	</update>
+	<update id="updat">
+		UPDATE user SET
+		USERNAME=#{username},password=#{password},
+		create_time=#{createTime},name=#{name},address=#{address},
+		email=#{email},state=#{state},money=#{money}, card_no=#{cardNo},tel=#{tel} WHERE user_id=#{userId}
+	</update>
+
+	<delete id="remove">
+		delete from user where user_id in
+		<foreach collection="array" item="ids" open="(" close=")"
+			separator=",">#{ids}</foreach>
+
+
+	</delete>
+</mapper>

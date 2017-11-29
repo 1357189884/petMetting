@@ -50,7 +50,7 @@
 					<div class="nav-item-inner nav-order">模块管理</div>
 				</li>
 				<li class="nav-item dl-selected">
-					<div class="nav-item-inner nav-order">宠物服务</div>
+					<div class="nav-item-inner nav-order">商品管理</div>
 				</li>
 				<li class="nav-item dl-selected">
 					<div class="nav-item-inner nav-order">我的图片</div>
@@ -107,25 +107,26 @@
 				homePage : '9',
 				menu : [ {
 					text : '用户管理',
-					items : [ {
-						id : '9',
-						text : '查看用户',
-						href : 'userlist.action'
-					}, {
-						id : '10',
-						text : '增加用户',
-						href : 'user/add.html'
-					}, {
-						id : '11',
-						text : '删除用户',
-						href : 'user/index.html'
-					}, {
-						id : '12',
-						text : '编辑用户',
-						href : 'user/edit.html'
-					} ]
-				} ]
-			}, {
+					items: [{
+                        id: '9',
+                        text: '查看用户',
+                        href: 'user/index'
+                    },{
+                        id: '10',
+                        text: '增加用户',
+                        href: 'user/add'
+                    },{
+                        id: '11',
+                        text: '删除用户',
+                        href: 'user/remove'
+                    },{
+                        id: '12',
+                        text: '编辑用户',
+                        href: 'user/edit'
+                    }
+					]
+                }]
+            }, {
 				id : '6',
 				homePage : '9',
 				menu : [ {
@@ -202,18 +203,27 @@
 				id : '9',
 				homePage : '9',
 				menu : [ {
-					text : '宠物服务',
-					items : [ {
-						id : '9',
-						text : '服务分类',
-						href : 'petinfo/index.html'
-					}, {
-						id : '10',
-						text : '报表分析',
-						href : 'petinfo/index.html'
-					} ]
-				} ]
-			}, {
+					 text: '商品管理',
+	                    items: [{
+	                        id: '9',
+	                        text: '商品查看',
+	                        href: 'product/index'
+	                    },{
+	                        id: '10',
+	                        text: '商品增加',
+	                        href: 'product/add'
+	                    },{
+	                        id: '10',
+	                        text: '商品刪除',
+	                        href: 'product/remove'
+	                    },{
+	                        id: '10',
+	                        text: '商品修改',
+	                        href: 'product/change'
+	                    }
+						]
+	                }]
+	            }, {
 				id : '10',
 				homePage : '9',
 				menu : [ {
