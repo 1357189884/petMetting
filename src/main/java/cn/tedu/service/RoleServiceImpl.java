@@ -53,7 +53,10 @@ public class RoleServiceImpl implements RoleService {
 	@Override
 	public void saveRoleModule(String roleId, String[] moduleIds) {
 		// TODO Auto-generated method stub
-		roleMapper.saveRoleModule(roleId,moduleIds);
+		if(moduleIds.length>0){
+			roleMapper.saveRoleModule(roleId,moduleIds);
+		}
+		
 	}
 	@Override
 	public List<String> findRolesByUid(String userId) {

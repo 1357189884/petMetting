@@ -110,7 +110,7 @@ public class RoleController {
 		return "/role/roleModule";
 	}
 		@RequestMapping("/saveRoleModule")
-		public String saveRoleModule(String roleId,String[] moduleIds){
+		public String saveRoleModule(String roleId,@RequestParam(required=false)String[] moduleIds){
 			
 			if(moduleIds!=null){
 				roleService.saveRoleModule(roleId,moduleIds);
