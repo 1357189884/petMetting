@@ -1,0 +1,101 @@
+
+#list{
+	background:#ecf0f2;
+	
+}
+#list #list_content{
+	width:1024px;
+	background:#fff;
+	height:auto;
+	margin:0 auto;
+}
+#list #list_content_top{
+	width:275px;
+	background:url(../images/list1.jpg) no-repeat top center;
+	height:53px;
+	line-height:53px;
+	float:left;
+	padding:0 0 0 20px;
+}
+#list #list_content_top h1{
+	float:left;
+	font-size:23px;
+	padding:7px 0 0 52px;
+	font-family:"微软雅黑";
+	color:#13964a;
+}
+#list #list_content_top h2{
+	float:left;
+	font-size:18px;
+	padding:10px 0 0 8px;
+	font-family:"宋体";
+	color:#fe6e4c;
+	font-weight:600;
+}
+#list #list_content_bottom{
+	width:1024px;
+	height:auto;
+	float:left;
+	margin-bottom:50px;
+}
+#list #list_content_bottom h1{
+	width:1024px;
+	height:38px;
+	line-height:38px;
+	font-size:22px;
+	font-family:"微软雅黑";
+	text-align:center;
+	color:#333;
+	margin:12px 0;
+}
+#list #list_content_bottom h2{
+	width:784px;
+	height:30px;
+	line-height:30px;
+	font-size:15px;
+	font-family:"宋体";
+	margin:0 auto;
+	text-align:center;
+	color:#666;
+	background:#e2e2e2;
+	font-weight:normal;
+}
+#list #list_content_bottom p{
+	width:784px;
+	text-indent:2em;
+	margin:19px 0 0 120px;
+	line-height:25px;
+	font-size:15px;
+	font-family:"宋体";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

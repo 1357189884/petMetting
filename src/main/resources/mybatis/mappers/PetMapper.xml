@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.PetMapper">
+
+
+	<select id="findAll" resultType="Pet">
+		SELECT * FROM pet ORDER BY
+		pet_id
+	</select>
+	<select id="findAllPets" resultType="Pet">
+		SELECT * FROM pet ORDER BY
+		pet_id LIMIT #{startPos},#{pageSize}
+	</select>
+	<select id="findPetCount" resultType="long">
+		SELECT count(*) FROM pet ORDER BY
+		pet_id 
+	</select>
+	
+	
+	<select id="findOne" resultType="Pet">
+		SELECT * FROM pet WHERE pet_id =
+		#{petId}
+	</select>
+
+	<delete id="delete">
+		DELETE FROM pet WHERE pet_id IN
+		<foreach collection="array" item="petId" open="(" close=")"
+			separator=",">
+			#{petId}
+		</foreach>
+	</delete>
+
+	<update id="changeHealth">
+		UPDATE pet SET health=#{health} WHERE pet_id in
+		<foreach collection="petIds" item="petId" open="(" close=")"
+			separator=",">
+			#{petId}
+		</foreach>
+	</update>
+
+	<insert id="save">
+		INSERT INTO pet(pet_id,pet_name,birthday,age,kind,remark,create_date,num,price,imgurl,health,fancy) 
+		VALUES(#{petId},#{petName},#{birthday},#{age},#{kind},#{remark},#{createDate},#{num},#{price},#{imgurl},#{health},#{fancy})
+	</insert>
+
+	<update id="update">
+		UPDATE pet SET
+		pet_name=#{petName},age=#{age},price=#{price},birthday=#{birthday},kind=#{kind},fancy=#{fancy},health=#{health},remark=#{remark}
+		WHERE pet_id=#{petId}
+	</update>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

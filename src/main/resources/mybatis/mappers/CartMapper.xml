@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.CartMapper">
+	<!-- <resultMap type="Pet" id="petRM" autoMapping="true"> <id column="pet_id" 
+		property="peId"/> </resultMap> -->
+	<select id="findById" resultType="cn.tedu.pojo.Pet">
+		select * from pet where pet_id=#{id}
+	</select>
+	<select id="findpById" resultType="cn.tedu.pojo.ProductO">
+		select * from product where product_id=#{id}
+	</select>
+	<insert id="save" useGeneratedKeys="true" parameterType="java.util.Map">
+		insert into cart(cart_id,cart_name,number,price)
+		values
+		<foreach collection="keys" index="key" item="value" open="("
+			close=")" separator=",">
+			#{key.petId},#{key.petname},#{value},#{key.price}*#{value}
+		</foreach>
+	</insert>
+</mapper>

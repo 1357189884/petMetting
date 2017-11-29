@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="cn.tedu.mapper.ModuleMapper">
+ <!--  <resultMap type="Pet" id="petRM" autoMapping="true">
+  		<id column="pet_id" property="peId"/>
+  	</resultMap> -->
+ <resultMap type="Module" id="findAllRM" autoMapping="true">
+		<id column="module_Id" property="moduleId" />
+		<association property="parentModel" javaType="Module">
+			<id column="p_id" property="moduleId"/>
+			<result column="p_name" property="name"/>
+		</association>
+	</resultMap>
+	<select id="findAll" resultMap="findAllRM">
+	 	SELECT * FROM
+module m
+LEFT JOIN
+(SELECT module_Id p_id,NAME p_name FROM module) p
+	ON m.`PARENT_ID`=p.p_id
+	ORDER BY order_no
+	 </select>
+	 <update id="changeState">
+	 update module set state=#{state} where module_id in 
+		<foreach collection="moduleIds" item="moduleId" open="(" close=")" separator=",">
+		#{moduleId}
+		</foreach>
+	 </update>
+	 <delete id="delete">
+		delete from module where module_id in
+		<foreach collection="array" item="moduleId" open="(" close=")" separator=",">
+			#{moduleId}
+		</foreach>
+	</delete>
+	<insert id="save">
+	insert into module (module_id,name,parent_id,ctype,state,remark,order_no) values (#{moduleId},#{name},#{parentModel.moduleId},#{ctype},#{state},#{remark},#{orderno})
+	</insert>
+	<select id="findOne" resultMap="findAllRM">
+	 	SELECT * FROM
+module m
+LEFT JOIN
+(SELECT module_Id p_id,NAME p_name FROM module) p
+	ON m.`PARENT_ID`=p.p_id
+	WHERE m.`MODULE_ID`=#{moduleId}
+	</select>
+	<update id="update">
+	update module set name=#{name},parent_id=#{parentModel.moduleId},ctype=#{ctype},state=#{state},remark=#{remark},order_no=#{orderno} where module_id=#{moduleId}
+	</update>
+  </mapper>

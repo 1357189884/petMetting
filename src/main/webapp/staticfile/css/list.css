@@ -1,0 +1,73 @@
+#list{
+	background:#ecf0f2;
+	width:auto;
+	height:auto;
+}
+#list #list_content{
+	width:1024px;
+	background:#fff;
+	height:760px;
+	margin:0 auto;
+}
+#list #list_content_top{
+	width:275px;
+	background:url(../images/list1.jpg) no-repeat top center;
+	height:53px;
+	line-height:53px;
+	float:left;
+	padding:0 0 0 20px;
+}
+#list #list_content_top h1{
+	float:left;
+	font-size:23px;
+	padding:7px 0 0 52px;
+	font-family:"微软雅黑";
+	color:#13964a;
+}
+#list #list_content_top h2{
+	float:left;
+	font-size:18px;
+	padding:10px 0 0 8px;
+	font-family:"宋体";
+	color:#fe6e4c;
+	font-weight:600;
+}
+#list #list_content_bottom{
+	width:1024px;
+	height:707px;
+	float:left;
+}
+#list #list_content_bottom ul{
+	width:724px;
+	height:667px;
+	float:left;
+	padding:40px 150px 0 150px;
+}
+#list #list_content_bottom ul li{
+	width:724px;
+	float:left;
+	font-size:15px;
+	font-family:"宋体";
+	height:36px;
+	line-height:36px;
+}
+#list #list_content_bottom ul li a{
+	color:#333;
+}
+#list #list_content_bottom ul li em{
+	float:right;
+	font-size:15px;
+	font-family:"宋体";
+	font-style:normal;
+	color:#333;
+}
+
+
+
+
+
+
+
+
+
+

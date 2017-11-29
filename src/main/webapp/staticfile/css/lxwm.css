@@ -1,0 +1,191 @@
+#list{
+	background:#ecf0f2;
+	width:auto;
+	height:auto;
+}
+#list #list_content{
+	width:1100px;
+	background:#fff;
+	height:700px;
+	margin:0 auto;
+}
+#list #list_content_top{
+	width:275px;
+	background:url(../images/list1.jpg) no-repeat top center;
+	height:53px;
+	line-height:53px;
+	float:left;
+	padding:0 0 0 20px;
+}
+#list #list_content_top h1{
+	float:left;
+	font-size:23px;
+	padding:7px 0 0 52px;
+	font-family:"微软雅黑";
+	color:#13964a;
+}
+#list #list_content_top h2{
+	float:left;
+	font-size:17px;
+	padding:13px 0 0 8px;
+	font-family:"宋体";
+	color:#fe6e4c;
+	font-weight:600;
+}
+#list #list_content_bottom{
+	width:1100px;
+	height:607px;
+	float:left;
+	padding-top:40px;
+}
+#list #list_content_bottom1{
+	background:url(../images/lxwm_1.jpg) no-repeat top center;
+	width:354px;
+	height:511px;
+	float:left;
+	margin-left:20px;
+}
+#list #list_content_bottom1 h1{
+	font-size:19px;
+	font-family:"微软雅黑";
+	width:354px;
+	color:#f44e51;
+	height:30px;
+	line-height:30px;
+	padding-top:140px;
+	text-align:center;
+}
+#list #list_content_bottom1 p{
+	font-size:14px;
+	font-family:"微软雅黑";
+	width:314px;
+	color:#333;
+	line-height:24px;
+	font-style:normal;
+	text-indent:2em;
+	padding:15px 20px 0 20px;
+}
+#list #list_content_bottom1 #list_p{
+	padding-top:80px;
+}
+#list #list_content_bottom1 #list_p p{
+	font-size:15px;
+	font-family:"宋体";
+	width:314px;
+	color:#333;
+	line-height:16px;
+	padding:10px;
+	font-weight:bold;
+}
+#list #list_content_bottom2{
+	background:url(../images/lxwm_1.jpg) no-repeat top center;
+	width:354px;
+	height:511px;
+	float:left;
+}
+#list #list_content_bottom2 h1{
+	font-size:19px;
+	font-family:"微软雅黑";
+	width:354px;
+	color:#f44e51;
+	height:30px;
+	line-height:30px;
+	padding-top:140px;
+	text-align:center;
+}
+#list #list_content_bottom2 p{
+	font-size:14px;
+	font-family:"微软雅黑";
+	width:314px;
+	color:#333;
+	line-height:24px;
+	font-style:normal;
+	text-indent:2em;
+	padding:15px 20px 0 20px;
+}
+#list #list_content_bottom2 #list_p{
+	padding-top:80px;
+}
+#list #list_content_bottom2 #list_p p{
+	font-size:15px;
+	font-family:"宋体";
+	width:314px;
+	color:#333;
+	line-height:16px;
+	padding:10px;
+	font-weight:bold;
+}
+#list #list_content_bottom3{
+	background:url(../images/lxwm_1.jpg) no-repeat top center;
+	width:354px;
+	height:511px;
+	float:left;
+}
+#list #list_content_bottom3 h1{
+	font-size:19px;
+	font-family:"微软雅黑";
+	width:354px;
+	color:#f44e51;
+	height:30px;
+	line-height:30px;
+	padding-top:140px;
+	text-align:center;
+}
+#list #list_content_bottom3 p{
+	font-size:14px;
+	font-family:"微软雅黑";
+	width:314px;
+	color:#333;
+	line-height:24px;
+	font-style:normal;
+	text-indent:2em;
+	padding:15px 20px 0 20px;
+}
+#list #list_content_bottom3 #list_p{
+	padding-top:80px;
+}
+#list #list_content_bottom3 #list_p p{
+	font-size:15px;
+	font-family:"宋体";
+	width:314px;
+	color:#333;
+	line-height:16px;
+	padding:10px;
+	font-weight:bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

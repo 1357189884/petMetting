@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.RoleMapper">
+	<select id="findAll" resultType="Role">
+		SELECT * from role
+	</select>
+	<update id="changeState">
+		update role set state=#{state} WHERE role_id in
+		<foreach collection="roleIds" item="roleId" open="(" close=")"
+			separator=",">
+			#{roleId}
+		</foreach>
+	</update>
+	<insert id="save">
+		INSERT INTO role(role_id,NAME,remarks,state) VALUES(
+		#{roleId},#{name},#{remarks},#{state}
+		)
+	</insert>
+	<select id="findOne" resultType="Role">
+		SELECT * from role where role_id=#{roleId}
+	</select>
+	<update id="update">
+		update role set name=#{name},remarks=#{remarks},state=#{state} where
+		role_id=#{roleId}
+	</update>
+	<delete id="delete">
+		DELETE FROM role WHERE role_id in
+		<foreach collection="array" item="roleId" open="(" close=")"
+			separator=",">
+			#{roleId}
+		</foreach>
+	</delete>
+
+	<delete id="deleteRolesByUid">
+		delete from role_uesr where user_id=#{userId}
+	</delete>
+	<insert id="saveUserAndRole">
+		INSERT INTO role_uesr (role_id,user_id) VALUES
+		<foreach collection="roleIds" item="roleId" separator=",">
+			(#{roleId},#{userId})
+		</foreach>
+	</insert>
+	<select id="findRolesByUid" resultType="String">
+		select role_id from role_uesr where user_id=#{userId}
+	</select>
+
+
+	<!-- 批量添加 角色对应的模块 -->
+	<insert id="saveRoleModule">
+
+		insert into role_module(role_id,module_id) values
+		<foreach collection="moduleIds" item="moduleId" separator=",">
+			(#{roleId},#{moduleId})
+		</foreach>
+
+	insert into role_module (role_id,module_id) values<foreach collection="moduleIds" item="moduleId" separator=",">
+	(#{roleId},#{moduleId})
+	</foreach>
+
+	</insert>
+
+
+
+
+	<delete id="deleteUserRole">
+		delete from role_user where role_id in 
+		<foreach collection="array" item="roleId" open="(" close=")" separator=",">
+			#{roleId}
+		</foreach>
+	</delete>
+	
+
+	<delete id="deleteModuleRole">
+		delete from role_module where role_id in 
+		<foreach collection="array" item="roleId" open="(" close=")" separator=",">
+			#{roleId}
+		</foreach>
+	</delete>
+</mapper>

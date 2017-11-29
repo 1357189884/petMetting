@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.BackOrderMapper">
+	
+	<resultMap type="Order" id="orderRm" autoMapping="true">
+		<id column="order_id" property="orderId"/>
+	 	<association property="user" javaType="User">
+	 		<id column="user_id" property="userId"/>
+	 		<result column="username" property="username"/>
+	 		<result column="name" property="name"/>
+	 		<result column="tel" property="tel"/>
+	 		<result column="address" property="address"/>
+	 	</association>
+	</resultMap>
+	<select id="findAllOrderUser" resultMap="orderRm">
+		SELECT DISTINCT `order`.order_id,`order`.order_time,`order`.order_address,`order`.money order_money,`user`.user_id,`user`.username,`user`.tel,`user`.`name`,`user`.address
+
+FROM `order` LEFT JOIN `user` 
+
+ON `order`.user_id=`user`.user_id limit #{startPos},#{pageSize}
+	</select>
+ 
+    <!-- 取得记录的总数 -->  
+    <select id="getOrderCount" resultType="long">  
+      SELECT count(*)
+
+FROM `order` LEFT JOIN `user` 
+
+ON `order`.user_id=`user`.user_id
+    </select>  
+    
+    
+    
+	
+	
+	
+	<select id="findOrder" resultMap="orderRm">
+		SELECT DISTINCT `order`.order_id,`order`.order_time,`order`.order_address,`order`.money order_money,`user`.user_id,`user`.username,`user`.tel,`user`.`name`,`user`.address
+
+FROM `order` LEFT JOIN `user` 
+
+ON `order`.user_id=`user`.user_id where `order`.order_id=#{orderId}
+	</select>
+	
+		<select id="findOrderById" resultMap="orderRm">
+		SELECT DISTINCT `order`.order_id,`order`.order_time,`order`.order_address,`order`.money order_money,`user`.user_id,`user`.username,`user`.tel,`user`.`name`,`user`.address
+FROM `order` LEFT JOIN `user` 
+ON `order`.user_id=`user`.user_id where `order`.order_id in
+	<foreach collection="orderIds" item="orderId" open="(" close=")" separator=",">
+		#{orderId}
+	</foreach>
+	</select>
+	
+	<resultMap type="Pet" id="petRm" autoMapping="true">
+		<id column="pet_id" property="petId"/>
+		<association property="order_info" javaType="Order_info">
+	 		<result column="order_info_id" property="orderInfoId"/>
+	 		<result column="pet_buyNum" property="petBuyNum"/>
+	 	</association>
+	</resultMap>
+	
+	<resultMap type="Product" id="proRm" autoMapping="true">
+		<id column="product_id" property="productId"/>
+		<association property="order_info" javaType="Order_info">
+	 		<result column="order_info_id" property="orderInfoId"/>
+	 		<result column="product_buyNum" property="productBuyNum"/>
+	 	</association>
+	</resultMap>
+	
+	<select id="findAllPet" resultMap="petRm">
+		SELECT pet.pet_id,pet.pet_name,pet.age,pet.kind,pet.remark, pet.price 
+from 
+(SELECT * from order_info where order_info.order_id=#{order_id}) oi
+LEFT JOIN pet ON
+oi.pet_id=pet.pet_id  
+
+	</select>
+	<select id="findAllProd" resultMap="proRm">
+	SELECT product.product_id,product.`kind`,product.`name`,product.price,product.description,order_info.order_info_id,order_info.product_buyNum
+from product
+LEFT JOIN order_info
+ON order_info.product_id=product.product_id WHERE order_info.order_id=#{order_id}
+	</select>
+	
+	
+</mapper>
